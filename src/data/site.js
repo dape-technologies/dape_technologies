@@ -123,7 +123,7 @@ export const projects = [
   {
     name: 'Go Fresh Shoe Laundry',
     category: 'Shoe care operations platform',
-    url: 'https://www.gofreshshoelaundry.com/dashboard',
+    url: 'https://www.gofreshshoelaundry.com/',
     image: '/images/go-fresh-shoe-laundry.webp',
     imageAlt: 'Go Fresh Shoe Laundry staff sign-in screen',
     need: 'A central operating system for a professional footwear care service.',

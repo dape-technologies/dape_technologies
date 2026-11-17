@@ -28,7 +28,7 @@ const openContact = () => {
     class="border-line/80 bg-surface/90 sticky top-0 z-30 border-b backdrop-blur-xl"
   >
     <nav
-      class="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 lg:px-8"
+      class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8"
       aria-label="Primary navigation"
     >
       <a

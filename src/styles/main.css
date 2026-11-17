@@ -506,6 +506,50 @@ button {
   border-color: rgb(203 217 224 / 0.14);
 }
 
+.capability-light {
+  position: absolute;
+  inset: 17% 10%;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgb(59 212 207 / 0.14) 0%,
+    rgb(59 212 207 / 0.045) 42%,
+    transparent 70%
+  );
+  filter: blur(18px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .capability-orbit-wide {
+    animation: capability-orbit-wide 28s linear infinite;
+  }
+
+  .capability-orbit-tight {
+    animation: capability-orbit-tight 22s linear infinite;
+  }
+}
+
+@keyframes capability-orbit-wide {
+  from {
+    transform: rotate(-12deg);
+  }
+
+  to {
+    transform: rotate(348deg);
+  }
+}
+
+@keyframes capability-orbit-tight {
+  from {
+    transform: rotate(18deg);
+  }
+
+  to {
+    transform: rotate(-342deg);
+  }
+}
+
 .impact-field {
   position: relative;
   overflow: hidden;

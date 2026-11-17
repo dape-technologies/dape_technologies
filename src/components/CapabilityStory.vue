@@ -133,45 +133,61 @@ onBeforeUnmount(() => observer?.disconnect())
           class="capability-orbit capability-orbit-tight"
           aria-hidden="true"
         ></div>
+        <motion.div
+          class="capability-light"
+          aria-hidden="true"
+          :animate="
+            reduceMotion
+              ? {}
+              : { opacity: [0.2, 0.42, 0.2], scale: [0.94, 1.05, 0.94] }
+          "
+          :transition="
+            reduceMotion
+              ? {}
+              : { duration: 8, repeat: Infinity, ease: 'easeInOut' }
+          "
+        />
         <AnimatePresence mode="wait" :initial="false">
-          <motion.img
+          <motion.div
             :key="activeCapability.id"
-            :src="activeCapability.image"
-            :alt="activeCapability.imageAlt"
-            class="absolute inset-0 h-full w-full object-contain"
+            class="absolute inset-0"
             :initial="
-              reduceMotion
-                ? false
-                : { opacity: 0, y: 30, rotate: 1.5, scale: 0.96 }
+              reduceMotion ? false : { opacity: 0, y: 24, scale: 0.965 }
             "
-            :animate="
-              reduceMotion
-                ? { opacity: 1 }
-                : { opacity: 1, y: [0, -7, 0], rotate: [0, -0.45, 0], scale: 1 }
-            "
+            :animate="{ opacity: 1, y: 0, scale: 1 }"
             :exit="
               reduceMotion
                 ? { opacity: 0 }
-                : { opacity: 0, y: -22, rotate: -1, scale: 1.02 }
+                : { opacity: 0, y: -18, scale: 1.015 }
             "
-            :transition="
-              reduceMotion
-                ? { duration: 0 }
-                : {
-                    opacity: { duration: 0.45 },
-                    y: { duration: 7, repeat: Infinity, ease: 'easeInOut' },
-                    rotate: {
-                      duration: 7,
-                      repeat: Infinity,
-                      ease: 'easeInOut',
-                    },
-                    scale: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
-                  }
-            "
-            width="1536"
-            height="1024"
-            loading="lazy"
-          />
+            :transition="{
+              duration: reduceMotion ? 0 : 0.5,
+              ease: [0.16, 1, 0.3, 1],
+            }"
+          >
+            <motion.img
+              :src="activeCapability.image"
+              :alt="activeCapability.imageAlt"
+              class="h-full w-full object-contain"
+              :animate="
+                reduceMotion
+                  ? {}
+                  : {
+                      y: [0, -10, 0],
+                      rotate: [0, -0.7, 0.35, 0],
+                      scale: [0.99, 1.012, 0.99],
+                    }
+              "
+              :transition="
+                reduceMotion
+                  ? {}
+                  : { duration: 8.5, repeat: Infinity, ease: 'easeInOut' }
+              "
+              width="1536"
+              height="1024"
+              loading="eager"
+            />
+          </motion.div>
         </AnimatePresence>
         <div
           class="absolute right-[5%] bottom-[10%] flex items-center gap-2 text-xs font-semibold text-white/55"
